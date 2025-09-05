@@ -9,7 +9,7 @@ import GridMenu from "./pages/GridMenu.jsx";
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/qr-menu" element={<GridMenu />} />
+      <Route path="/qr-menu-v2" element={<GridMenu />} />
       <Route path="/qr-menu/home" element={<App />} />
       <Route path="/qr-menu/english-menu" element={<EnglishMenu />} />
       <Route path="/qr-menu/grid-menu" element={<GridMenu />} />

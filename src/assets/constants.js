@@ -7,13 +7,83 @@ Items -
   recommended: boolean,
   price: string,
   description: string,
-  addOns: object[]
+  addOns: object[],
+  image: string (optional)
 
 Add-Ons:
   addOnName: string,
   price: string
 
 */
+
+// Import images
+// Breakfast images
+import classicFrenchOmelette from "./breakfast/french_omelette.jpg";
+import avoEasy from "./breakfast/avo_easy.jpg";
+
+import basilRice from "./asian/basil_rice.jpg";
+import chickenBriyani from "./asian/chicken_briyani.jpg";
+import greenCurry from "./asian/green_curry.jpg";
+import gyudon from "./asian/gyudon.jpg";
+import katsudon from "./asian/katsudon.jpeg";
+import teriyaki from "./asian/teriyaki_chicken.jpg";
+import friedRice from "./asian/tom_yum_fried_rice.jpg";
+
+// Baked goods images
+import croissant from "./baked_goods/croissant.jpg";
+import painChocolat from "./baked_goods/pain-chocolate.jpg";
+import plait from "./baked_goods/plait.jpg";
+import danish from "./baked_goods/danish.jpg";
+import bagel from "./muffins_bagel/bagel.jpg";
+
+// muffins
+import chocolate from "./muffins_bagel/chocolate.jpg";
+import apple from "./muffins_bagel/apple.jpg";
+import banana from "./muffins_bagel/banana.jpg";
+import blueberry from "./muffins_bagel/blueberry_cheesecake.jpg";
+import cookie from "./muffins_bagel/cookie.jpg";
+import cranberry from "./muffins_bagel/cranberry.jpg";
+import lemon from "./muffins_bagel/lemon_yuzu.jpg";
+
+// Italian images
+import aglioOlio from "./italian/aglio_olio.jpg";
+import arrabbiata from "./italian/arrabbiata.jpg";
+import bolognese from "./italian/bolognese.jpg";
+import lasagna from "./italian/lasagna.jpg";
+import nerano from "./italian/nerano.jpg";
+import norma from "./italian/norma.jpg";
+import pomodoro from "./italian/pomodoro.jpg";
+import puttanesca from "./italian/puttanesca.jpg";
+import spinachi from "./italian/spinachi.jpg";
+import vongole from "./italian/vongole.jpg";
+
+// Fusion images
+import mentaiko from "./fusion/mentaiko.jpg";
+import saltedEgg from "./fusion/salted_egg.png";
+import saltedEggChicken from "./fusion/salted_egg_chicken.png";
+import saltedEggPrawn from "./fusion/salted_egg_prawn.jpg";
+import shanghainese from "./fusion/shanghainese.jpg";
+import tomYum from "./fusion/tom_yum.jpg";
+
+// Mains images
+import chop from "./mains/chop.jpg";
+import fishChips from "./mains/fish_chips.jpg";
+import parmigiana from "./mains/parmigiana.png";
+import seabass from "./mains/seabass.png";
+import steakFrites from "./mains/steak_frites.jpg";
+
+// sandwiches
+import angusBurger from "./sandwich/angus_burger.jpg";
+import caprese from "./sandwich/caprese.png";
+import eggMayo from "./sandwich/egg_mayo.jpg";
+import tunaMayo from "./sandwich/tuna_mayo.jpg";
+import turkeyBlte from "./sandwich/turkey_blte.png";
+import turkeyBrie from "./sandwich/turkey_brie.png";
+import katsuSando from "./sandwich/katsu_sando.png";
+import turkeyBsm from "./sandwich/turkey_bacon_brie_spinach_mushroom.jpg";
+
+// Dummy photo fallback
+import dummyPhoto from "./dummy_photo.png";
 
 export const breakfastMenu = [
   {
@@ -41,6 +111,7 @@ export const breakfastMenu = [
     description:
       "Whole avocado smashed with a touch of lemon, two eggs over-easy, sliced tomatoes, on a sourdough toast.",
     addOns: [],
+    image: avoEasy,
   },
   {
     itemName: "Buttermilk Pancakes w/ Maple Syrup",
@@ -87,6 +158,7 @@ export const breakfastMenu = [
     price: "$6.90",
     description:
       "Three-egg omelette with a smooth, silky exterior and a moist, soft-scrambled interior mixed with assorted herbs. Served on a sourdough toast with a side salad.",
+    image: classicFrenchOmelette,
     addOns: [
       {
         addOnName: "Turkey Bacon",
@@ -156,6 +228,7 @@ export const bakedGoodsMenu = [
     recommended: false,
     price: "$3.00",
     description: null,
+    image: croissant,
     addOns: [],
   },
   {
@@ -165,6 +238,7 @@ export const bakedGoodsMenu = [
     recommended: false,
     price: "$3.00",
     description: null,
+    image: painChocolat,
     addOns: [],
   },
   {
@@ -174,6 +248,7 @@ export const bakedGoodsMenu = [
     recommended: false,
     price: "$4.20",
     description: null,
+    image: plait,
     addOns: [],
   },
   {
@@ -183,6 +258,7 @@ export const bakedGoodsMenu = [
     recommended: false,
     price: "$4.50",
     description: null,
+    image: danish,
     addOns: [],
   },
   {
@@ -192,6 +268,7 @@ export const bakedGoodsMenu = [
     recommended: false,
     price: "$2.00 / $4.00",
     description: "Check with counter for the flavours of the day.",
+    image: bagel,
     addOns: [
       {
         addOnName: "French Butter",
@@ -225,11 +302,67 @@ export const bakedGoodsMenu = [
     addOns: [],
   },
   {
-    itemName: "Molten-Filled Muffins",
+    itemName: "Banana Custard Speculoos",
     vegetarian: false,
     spicy: false,
     recommended: false,
     price: "$3.90",
+    image: banana,
+    description:
+      "Double Chocolate | Banana Custard Speculoos | Blueberry Cheesecake | Vanilla Apple | Lemon Yuzu | Cranberry Salted Caramel",
+    addOns: [],
+  },
+  {
+    itemName: "Double Chocolate Muffin",
+    vegetarian: false,
+    spicy: false,
+    recommended: false,
+    price: "$3.90",
+    image: chocolate,
+    description:
+      "Double Chocolate | Banana Custard Speculoos | Blueberry Cheesecake | Vanilla Apple | Lemon Yuzu | Cranberry Salted Caramel",
+    addOns: [],
+  },
+  {
+    itemName: "Blueberry Cheesecake",
+    vegetarian: false,
+    spicy: false,
+    recommended: false,
+    price: "$3.90",
+    image: blueberry,
+    description:
+      "Double Chocolate | Banana Custard Speculoos | Blueberry Cheesecake | Vanilla Apple | Lemon Yuzu | Cranberry Salted Caramel",
+    addOns: [],
+  },
+  {
+    itemName: "Vanilla Apple",
+    vegetarian: false,
+    spicy: false,
+    recommended: false,
+    price: "$3.90",
+    image: apple,
+    description:
+      "Double Chocolate | Banana Custard Speculoos | Blueberry Cheesecake | Vanilla Apple | Lemon Yuzu | Cranberry Salted Caramel",
+    addOns: [],
+  },
+  {
+    itemName: "Lemon Yuzu",
+    vegetarian: false,
+    spicy: false,
+    recommended: false,
+    price: "$3.90",
+    image: lemon,
+    description:
+      "Double Chocolate | Banana Custard Speculoos | Blueberry Cheesecake | Vanilla Apple | Lemon Yuzu | Cranberry Salted Caramel",
+    addOns: [],
+  },
+  {
+    itemName: "Cranberry Salted Caramel",
+    vegetarian: false,
+    spicy: false,
+    recommended: false,
+    price: "$3.90",
+    image: cranberry,
     description:
       "Double Chocolate | Banana Custard Speculoos | Blueberry Cheesecake | Vanilla Apple | Lemon Yuzu | Cranberry Salted Caramel",
     addOns: [],
@@ -421,6 +554,7 @@ export const italianMenu = [
     price: "$8.90",
     description:
       "A light, creamy homemade paste of crushed Italian basil leaves, toasted pine nuts, garlic, and extra virgin olive oil.",
+    image: spinachi,
     addOns: [],
   },
   {
@@ -431,6 +565,7 @@ export const italianMenu = [
     price: "$7.90",
     description:
       "Sicilian eggplant pasta. Sautéed aubergine tossed in a homemade tomato sauce and sprinkled with shredded Fior di Latte.",
+    image: norma,
     addOns: [],
   },
   {
@@ -441,6 +576,7 @@ export const italianMenu = [
     price: "$7.90",
     description:
       "Classic base of tomatoes and Italian basil, topped with a soft, buttery mix of Buffalo Mozzarella and cream.",
+    image: pomodoro,
     addOns: [
       {
         addOnName: "Sliced Beef",
@@ -457,6 +593,7 @@ export const italianMenu = [
     price: "$6.50",
     description:
       "An angry pasta, literally. A spicy sauce made from garlic, tomatoes, and red chili peppers cooked in olive oil.",
+    image: arrabbiata,
     addOns: [
       {
         addOnName: "Chicken",
@@ -477,6 +614,7 @@ export const italianMenu = [
     recommended: false,
     price: null,
     description: "Garlic and red chili peppers sautéed in olive oil.",
+    image: aglioOlio,
     addOns: [
       {
         addOnName: "with Turkey Bacon",
@@ -512,6 +650,7 @@ export const italianMenu = [
     price: "$6.90",
     description:
       "Wild mushrooms, spinach, and garlic sautéed in olive oil, tossed in cream, and topped with Italian parsley.",
+    image: spinachi,
     addOns: [
       {
         addOnName: "Truffles Infused Mushroom Cream",
@@ -529,6 +668,7 @@ export const italianMenu = [
     price: "$7.90",
     description:
       "A pork-free, and loose adaptation of the traditional recipe. Sautéed turkey bacon, cream, black pepper, and sous vide egg.",
+    image: spinachi,
     addOns: [
       {
         addOnName: "Truffles Infusion",
@@ -545,6 +685,7 @@ export const italianMenu = [
     price: "$9.90",
     description:
       "A rich, herbed tomato meat gravy braised over 3 hours. Minced beef, onions, celery, carrots, whole peeled tomatoes, rosemary, bay leave, and a dash of wine.",
+    image: bolognese,
     addOns: [
       {
         addOnName: "Bolognese Gravy (1.5 portions)",
@@ -561,6 +702,7 @@ export const italianMenu = [
     price: "$9.90",
     description:
       "Baked layers of our Bolognese gravy, Béchamel sauce, Fior di Latte, Grana Padano, and lasagne pasta sheets.",
+    image: lasagna,
     addOns: [],
   },
   {
@@ -571,6 +713,7 @@ export const italianMenu = [
     price: "$9.90",
     description:
       "Capers, black olives, anchovies, and garlic sautéed in olive oil and tossed in a light tomato sauce.",
+    image: puttanesca,
     addOns: [],
   },
 
@@ -582,6 +725,7 @@ export const italianMenu = [
     price: "$9.90",
     description:
       "Fresh local clams, parsley and garlic sautéed in olive oil with a splash of white wine. A light, Italian classic.",
+    image: vongole,
     addOns: [],
   },
 
@@ -593,16 +737,7 @@ export const italianMenu = [
     price: "$9.90",
     description:
       "A light, buttery pasta dish named after a village along the Amalfi coast. Pan-fried zucchini creamed with Provolone del Monaco (or other substitutes).",
-    addOns: [],
-  },
-  {
-    itemName: "Secret Menu",
-    vegetarian: false,
-    spicy: false,
-    recommended: false,
-    price: null,
-    description:
-      "Check with counter. Subject to the seasonal availability of ingredients and longer wait times.",
+    image: nerano,
     addOns: [],
   },
 ];
@@ -616,6 +751,7 @@ export const fusionMenu = [
     price: "$6.50",
     description:
       "Shiitake mushrooms sautéed in olive oil with a hot and sour Tom Yum paste. Topped with coriander.",
+    image: tomYum,
     addOns: [
       {
         addOnName: "Fried Chicken Chunks",
@@ -637,6 +773,7 @@ export const fusionMenu = [
     price: "$6.50",
     description:
       "Spaghetti tossed in an aromatic blend of scallion oil and premium soy sauce.",
+    image: shanghainese,
     addOns: [
       {
         addOnName: "Sunny-Side Up",
@@ -663,6 +800,7 @@ export const fusionMenu = [
     price: "$6.50",
     description:
       "Spaghetti tossed in a buttery homemade paste of salted duck egg yolks and cream. Spiced with red chili peppers and fragrant curry leaves.",
+    image: saltedEgg,
     addOns: [
       {
         addOnName: "Fried Chicken Chunks",
@@ -684,6 +822,7 @@ export const fusionMenu = [
     price: "$8.90",
     description:
       "Slightly spicy Alaskan pollock roe and cream, topped with a generous amount of Japanese seaweed (nori).",
+    image: mentaiko,
     addOns: [
       {
         addOnName: "Fried Chicken Chunks",
@@ -710,6 +849,7 @@ export const asianMenu = [
     spicy: true,
     recommended: false,
     price: "$6.50",
+    image: basilRice,
     description:
       "Stir-fried hot and spicy minced chicken with holy basil. Served with a sunny-side up and steamed white rice.",
     addOns: [
@@ -731,6 +871,7 @@ export const asianMenu = [
     spicy: true,
     recommended: false,
     price: "$8.50",
+    image: greenCurry,
     description:
       "An aromatic and creamy chicken curry cooked with a homemade paste, coconut milk, red capsicums, fish sauce, sweet basil, and kaffir lime leaves. Served with sautéed eggplant, sunny-side up and steamed white rice.",
     addOns: [
@@ -747,6 +888,7 @@ export const asianMenu = [
     spicy: true,
     recommended: false,
     price: "$7.50",
+    image: friedRice,
     description:
       "Fried rice with a distinct hot and sour flavour. Served with fried chicken chunks and a sunny-side up.",
     addOns: [
@@ -763,6 +905,7 @@ export const asianMenu = [
     spicy: false,
     recommended: false,
     price: "$7.50",
+    image: katsudon,
     description:
       "Crispy Panko-breaded chicken cutlet served with a sweet-savoury sauce of onions cooked in dashi, and eggs over short-grain rice.",
     addOns: [
@@ -779,6 +922,7 @@ export const asianMenu = [
     spicy: false,
     recommended: false,
     price: "$7.50",
+    image: teriyaki,
     description:
       "Boneless chicken thigh glazed in a sweet and savoury soy sauce. Served with edamame over short-grain rice.",
     addOns: [
@@ -800,6 +944,7 @@ export const asianMenu = [
     spicy: false,
     recommended: false,
     price: "$8.50",
+    image: gyudon,
     description:
       "Savoury sliced beef and sautéed onions placed over rice, garnished with spring onions.",
     addOns: [
@@ -826,6 +971,7 @@ export const asianMenu = [
     spicy: false,
     recommended: false,
     price: "Click to see Prices",
+    image: chickenBriyani,
     description:
       "Biryani cooked with long grain basmati rice, freshly grounded herbs, and spices in a traditional dum. Served with yoghurt raitha and gravy.",
     addOns: [
@@ -853,6 +999,7 @@ export const sandwichMenu = [
     recommended: false,
     price: "$4.00",
     description: null,
+    image: eggMayo,
     addOns: [],
   },
   {
@@ -862,16 +1009,7 @@ export const sandwichMenu = [
     recommended: false,
     price: "$4.30",
     description: null,
-    addOns: [],
-  },
-  {
-    itemName: "Avo-Easy",
-    vegetarian: true,
-    spicy: false,
-    recommended: false,
-    price: "$9.90",
-    description:
-      "Whole avocado smashed with a touch of lemon, two eggs over-easy, sliced tomatoes, on a sourdough toast.",
+    image: tunaMayo,
     addOns: [],
   },
   {
@@ -880,6 +1018,7 @@ export const sandwichMenu = [
     spicy: false,
     recommended: false,
     price: "$11.90",
+    image: caprese,
     description:
       "Open-faced. Slices of Buffalo Mozzarella, tomatoes, Italian basil, drizzle of olive oil and Balsamic vinegar, and homemade Pesto spread on a sourdough toast.",
     addOns: [],
@@ -890,6 +1029,7 @@ export const sandwichMenu = [
     spicy: false,
     recommended: true,
     price: "$10.90",
+    image: turkeyBlte,
     description:
       "Turkey bacon, Cheddar cheese slice, egg over-easy, Romaine lettuce, sliced tomatoes, sweet chili sauce, and white toast slices.",
     addOns: [
@@ -906,6 +1046,7 @@ export const sandwichMenu = [
     spicy: false,
     recommended: false,
     price: "$9.90",
+    image: katsuSando,
     description:
       "6oz Panko-breaded chicken cutlet, homemade Tonkatsu sauce, cabbage, and white toast slices.",
     addOns: [],
@@ -916,6 +1057,7 @@ export const sandwichMenu = [
     spicy: false,
     recommended: true,
     price: "$15.90",
+    image: turkeyBsm,
     description:
       "Double turkey bacon, melted Brie, sautéed mushrooms, wilted baby spinach, and sourdough toast slices.",
     addOns: [],
@@ -947,6 +1089,7 @@ export const sandwichMenu = [
     spicy: false,
     recommended: true,
     price: "$18.50",
+    image: angusBurger,
     description:
       "A hefty and juicy 8oz Angus beef patty, Cheddar cheese slice, Romaine lettuce, and sliced tomato between fluffy brioche buns buttered with our special house sauce. Served medium by default with fries. Minimum wait time of 15 minutes to allow the meat to rest sufficiently.",
     addOns: [
@@ -973,6 +1116,7 @@ export const mainsMenu = [
     price: "$8.90",
     description:
       "8oz grilled chicken served with roasted potatoes and market greens.",
+    image: chop,
     addOns: [
       {
         addOnName: "Double Up Chicken",
@@ -989,6 +1133,7 @@ export const mainsMenu = [
     price: "$8.90",
     description:
       "John Dory fish fried in a light and airy Tempura batter. Served with fries and coleslaw.",
+    image: fishChips,
     addOns: [
       {
         addOnName: "Upsize Fish (1.5 portions)",
@@ -1005,6 +1150,7 @@ export const mainsMenu = [
     price: "$15.90",
     description:
       "12oz crispy breaded chicken cutlet covered in our homemade tomato sauce and melted Mozzarella. Served with roasted potatoes and salad greens. Minimum wait time of 15 minutes.",
+    image: parmigiana,
     addOns: [],
   },
   {
@@ -1015,6 +1161,7 @@ export const mainsMenu = [
     price: "$14.90",
     description:
       "7oz local seabass fillet pan-seared and served with roasted potatoes and market greens.",
+    image: seabass,
     addOns: [],
   },
   {
@@ -1024,7 +1171,8 @@ export const mainsMenu = [
     recommended: true,
     price: "$19.90",
     description:
-      "7oz Picahna (rump cap) seared medium rare by default. Served with black pepper sauce, and a double portion of shoestring fries. Minimum wait time of 15 minutes.",
+      "7oz Picahna (rump cap) seared medium rare by default. Served with black pepper sauce, and a double portion of shoestring frites. Minimum wait time of 15 minutes.",
+    image: steakFrites,
     addOns: [],
   },
 ];

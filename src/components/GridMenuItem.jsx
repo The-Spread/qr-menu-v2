@@ -11,7 +11,7 @@ export default function GridMenuItem({ item, onClick }) {
     >
       {/* Image */}
       <img
-        src={dummyPhoto}
+        src={item.image || dummyPhoto}
         alt={item.itemName}
         className="w-full h-full object-cover"
       />

@@ -26,7 +26,7 @@ export default function MenuItemModal({ item, isOpen, onClose }) {
           {/* Image */}
           <div className="w-full h-64 mb-4">
             <img
-              src={dummyPhoto}
+              src={item.image || dummyPhoto}
               alt={item.itemName}
               className="w-full h-full object-cover rounded-lg"
             />

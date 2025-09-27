@@ -39,7 +39,7 @@ export default function GridMenuItem({ item, onClick }) {
       <div className="absolute bottom-0 left-0 right-0">
         <div className="bg-black bg-opacity-75 text-white p-2">
           <div
-            className="text-[8px] font-semibold leading-tight overflow-hidden"
+            className="text-[16px] font-semibold leading-tight overflow-hidden"
             style={{
               display: "-webkit-box",
               WebkitLineClamp: 2,
@@ -49,7 +49,7 @@ export default function GridMenuItem({ item, onClick }) {
             {item.itemName}
           </div>
           {item.price && (
-            <div className="text-[8px] text-green-300 mt-1">{item.price}</div>
+            <div className="text-[12px] text-green-300 mt-1">{item.price}</div>
           )}
         </div>
       </div>
